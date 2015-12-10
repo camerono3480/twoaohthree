@@ -15,11 +15,11 @@ struct emu2A03 {
 	status_register reg_ST;
         
         class basic_programe{
-        	public;
+        	pivate;
+        	int start;
         bool start;
-       
-        
-	bool is_done; // end the program in case of exception
+        bool is_done; // end the program in case of exception
+      friend void start(is_done );
         }
 	emu2A03(byte*);
 	~emu2A03();
