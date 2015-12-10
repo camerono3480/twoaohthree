@@ -15,6 +15,7 @@ MemoryMap::MemoryMap(emu2A03* cpu) {
 	class start_overide{
 		private;
 		friend void start(is_done );
+		//this is right a ??
 	}
 
 	// RAM
