@@ -13,7 +13,10 @@ struct emu2A03 {
 	reg reg_A, reg_X, reg_Y;
 	address reg_SP, reg_PC;
 	status_register reg_ST;
-
+        
+        bool true;{
+        true = start;};
+        
 	bool is_done; // end the program in case of exception
 
 	emu2A03(byte*);
