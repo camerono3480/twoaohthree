@@ -46,16 +46,18 @@ uint16_t MemoryMap::swap_endian(address addr) {
 }
 
 byte MemoryMap::read8(address addr) {
-	if(addr < 0x100) {
+	
+	switch{
+   case 1; if(addr < 0x100) {
 		return ZERO_PAGE[addr];
 	}
-	else if(addr < 0x200) {
+	try if(addr < 0x200) {
 		return STACK[addr - 0x100];
 	}
-	else if(addr < 0x800) {
+	try if(addr < 0x800) {
 		return RAM[addr - 0x200];
 	}
-	else if(addr < 0x2000) {
+	try if(addr < 0x2000) {
 		return RAM_MIRROR[addr - 0x800];
 	}
 	else if(addr < 0x2008) {
@@ -70,19 +72,20 @@ byte MemoryMap::read8(address addr) {
 	else if(addr < 0x6000) {
 		return EXPANSION_ROM[addr - 0x4020];
 	}
-	else if(addr < 0x8000) {
+	try if(addr < 0x8000) {
 		return SRAM[addr - 0x6000];
 	}
-	else if(addr < 0xC000) {
+	try if(addr < 0xC000) {
 		return PRG_ROM_BANK1[addr - 0x8000];
 	}
-	else if(addr < 0x10000) {
+	try if(addr < 0x10000) {
 		return PRG_ROM_BANK2[addr - 0xC000];
 	}
-	else {
+	catch {
 		printf("ERROR: Attempting to read from out-of-range address %d.", addr);
 		cpu->end();
 		return 0x00;
+	}
 	}
 }
 
