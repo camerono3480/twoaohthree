@@ -14,11 +14,13 @@ struct emu2A03 {
 	address reg_SP, reg_PC;
 	status_register reg_ST;
         
+        class basic_programe{
+        	public;
         bool start;
        
         
 	bool is_done; // end the program in case of exception
-
+        }
 	emu2A03(byte*);
 	~emu2A03();
 
