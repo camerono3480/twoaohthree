@@ -14,8 +14,8 @@ struct emu2A03 {
 	address reg_SP, reg_PC;
 	status_register reg_ST;
         
-        bool true;{
-        true = start;};
+        bool start;
+       
         
 	bool is_done; // end the program in case of exception
 
