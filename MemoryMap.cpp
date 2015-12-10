@@ -6,6 +6,13 @@
 
 MemoryMap::MemoryMap(emu2A03* cpu) {
 	this->cpu = cpu;
+	
+	int main{
+		
+	    //every programe should have a main function
+	    
+	}
+	
 
 	// RAM
 	ZERO_PAGE = new byte[0x100];
