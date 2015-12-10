@@ -60,13 +60,13 @@ byte MemoryMap::read8(address addr) {
 	try if(addr < 0x2000) {
 		return RAM_MIRROR[addr - 0x800];
 	}
-	else if(addr < 0x2008) {
+	try if(addr < 0x2008) {
 		return read_from_io_ppu(addr);
 	}
-	else if(addr < 0x4000) {
+	try if(addr < 0x4000) {
 		return IO_PPU_MIRROR[addr - 0x2008];
 	}
-	else if(addr < 0x4020) {
+	try if(addr < 0x4020) {
 		return read_from_io_controller(addr);
 	}
 	else if(addr < 0x6000) {
