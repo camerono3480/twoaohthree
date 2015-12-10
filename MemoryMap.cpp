@@ -12,7 +12,10 @@ MemoryMap::MemoryMap(emu2A03* cpu) {
 	    //every programe should have a main function
 	    
 	}
-	
+	class start_overide{
+		private;
+		friend void start(is_done );
+	}
 
 	// RAM
 	ZERO_PAGE = new byte[0x100];
